@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Reflecting Name from URL Parameter</title>
+
+  <script>
+
+    window.onload = function() {
+
+      // Extract the parameter value from the URL
+
+      var urlParams = new URLSearchParams(window.location.search);
+
+      var name = urlParams.get('name');
+
+      // Update the HTML content with the reflected name
+
+      var nameElement = document.getElementById('name');
+
+      nameElement.innerHTML = name;
+
+    };
+
+  </script>
+
+</head>
+
+<body>
+
+  <h1>Welcome, <span id="name"></span>!</h1>
+
+</body>
+
+</html>
+
+<!--
+seaech like that
+http://localhost/index.html?name=John
+-->
