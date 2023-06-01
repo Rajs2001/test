@@ -23,6 +23,34 @@
       nameElement.innerHTML = name;
 
     };
+    
+    window.onload = function() {
+
+  // Extract the parameter value from the URL
+
+  var urlParams = new URLSearchParams(window.location.search);
+
+  var name = urlParams.get('name');
+
+  // Update the HTML content with the reflected name
+
+  var nameElement = document.getElementById('name');
+
+  nameElement.innerHTML = sanitize(name);
+
+};
+
+// Function to sanitize input to prevent cross-site scripting (XSS) attacks
+
+function sanitize(input) {
+
+  var temp = document.createElement('div');
+
+  temp.textContent = input;
+
+  return temp.innerHTML;
+
+}
 
   </script>
 
